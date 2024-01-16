@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminProduct</title>
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+    <div id="container">
+
+        <div class="sidenav">
+
+            <div class="home"><a href="./adminpade_home.html">Home</a></div>
+            <div class="product active"><a href="./adminproduct.html">Product</a></div>
+            <div class="addproduct"><a href="./adminaddproduct.html">Add Product</a></div>
+            <div class="login"><a href="./adminlogin.html">Login</a></div>
+            <div  class="logout"><a href="./adminlogout.html">Logout</a></div>
+        </div>
+        <div class="bodi">
+
+            <div id="products_continer">
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    
+
+
+let product=document.getElementById("products_continer")
+
+function addCart(obj){
+   let cartDetails=JSON.parse(localStorage.getItem("cartDetails")) || []
+   cartDetails.push(obj)
+  localStorage.setItem('cartDetails',JSON.stringify(cartDetails))
+
+}
+function rating(){
+  fetch("./db.json")
+  .then((res)=>res.json())
+  .then((data)=>{
+    data.sort(function(a,b){
+      return b.rating.rate -a.rating.rate;
+    })
+    product.innerHTML=null;
+    displayproducts(data)
+  })
+
+  
+}
+
+
+function priceLowtohigh(){
+
+  fetch("./db.json")
+  .then((res)=>res.json())
+  .then((data)=>{
+    data.sort(function(a,b){
+      return a.price -b.price;
+    })
+    product.innerHTML=null;
+    displayproducts(data)
+  })
+
+}
+
+
+function  displayproducts(data){
+   data.forEach(element => {
+    let title=document.createElement('h3')
+    let imge=document.createElement('img')
+    let p=document.createElement('p')
+    let p1=document.createElement('p')
+    p1.innerText=element.rating.rate+" ⭐";
+    let box=document.createElement('div')
+    let cartbutton=document.createElement('button')
+      cartbutton.innerText="Add Cart"
+
+      title.innerText=element.title
+      imge.src=element.image
+      p.innerText=element.price
+      imge.style.width="100px"
+      box.append(title,imge,p,p1,cartbutton)
+      product.append(box)
+
+      cartbutton.onclick=function(){
+        addCart(element)
+
+      }
+
+    
+   });
+      
+
+
+
+}
+
+
+fetch("./db.json")
+.then((res)=>res.json())
+.then((data)=>displayproducts(data)
+  
+)
+.catch((err)=>console.log(err))
+
+
+
+
+       
+
+     
+
+
+
+
+</script>

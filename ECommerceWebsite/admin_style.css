@@ -1,0 +1,161 @@
+body{
+    margin: 0;
+    padding:0;
+}
+
+#container{
+    display: flex;
+}
+
+#container >div{
+    border: 1px solid black;
+    
+}
+
+.sidenav{
+    width: 20%;
+    height: 748px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(62, 135, 111);
+}
+
+.sidenav >div{
+    width: 100%;
+    height: 50px;
+    padding-top: 30px;
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.sidenav >div:hover{
+    cursor: pointer;
+    background-color:rgb(118, 149, 149)
+}
+.mar{
+    /* margin-top: 10px; */
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.home{
+    border-bottom: 1px solid black;
+}
+
+.product{
+    border-bottom: 1px solid black;
+}
+
+.login{
+    border-bottom: 1px solid black;
+}
+
+.logout{
+    border-bottom: 1px solid black;
+}
+
+
+.addproduct{
+    border-bottom: 1px solid black;
+}
+
+.bodi{
+    width: 80%;
+    /* position: relative; */
+    /* background-color: red; */
+    /* border: 1px solid red; */
+    margin-left: 20%;
+}
+
+.active{
+    background-color:rgb(118, 149, 149)
+}
+
+#products_continer{
+    display: grid;
+    /* width: 97%;
+    margin: auto; */
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-left: 5px;
+}
+
+#products_continer > div{
+    padding: 10px;
+    /* border: 1px solid black; */
+    background-color: white;
+    border-radius: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#products_continer > div >button{
+    border: none;
+    border-radius: 4px ;
+    background-color: #cce6ff;
+}
+
+#products_continer > div:hover{
+    cursor: pointer;
+    /* height: 300px; */
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+#products_continer > div >button:hover{
+   cursor: pointer;
+   border: 1px solid black;
+   
+}
+
+
+
+/* img{
+    height: 200px;
+    width: 100%;
+
+} */
+
+#message{
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    margin: auto;
+    margin-top: 200px;
+    display: none;
+    scale: 1;
+}
+
+
+.ratbuttonpannel{
+    background-color: white;
+    margin-left: 5px;
+    width: 99%;
+    height: 50px;
+    display:flex;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+
+    /* padding-left: 20px; */
+    /* padding-right: 30px; */
+    align-items: center;
+    /* border-bottom:1px solid  black; */
+    justify-content: space-between;
+    /* position: fixed; */
+}
+.ratting{
+    background-color: #cce6ff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+
+
